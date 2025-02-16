@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Indus Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Download Indus Game</h1>
+</header>
+
+<main>
+    <p>Your download will start in <span id="timer">30</span> seconds...</p>
+    <a href="https://play.google.com/store/apps/details?id=com.example.indus" id="download-link" class="download-btn" style="display: none;">Download Now</a>
+</main>
+
+<script>
+    let countdown = 30;
+    let timer = document.getElementById("timer");
+    let downloadLink = document.getElementById("download-link");
+
+    let interval = setInterval(function () {
+        countdown--;
+        timer.innerText = countdown;
+        if (countdown <= 0) {
+            clearInterval(interval);
+            downloadLink.style.display = "block";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
